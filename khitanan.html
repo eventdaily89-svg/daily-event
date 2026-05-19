@@ -1,360 +1,209 @@
-import { useEffect, useState } from "react"
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Khitanan Muhammad Azzam</title>
 
-export default function KhitanInvitationWebsite() {
-  const targetDate = new Date("2026-05-25T09:00:00")
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  })
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      const now = new Date()
-      const difference = targetDate - now
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        })
-      }
-    }, 1000)
+    body {
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
 
-    return () => clearInterval(timer)
-  }, [])
-  return (
-    <div className="min-h-screen bg-[#f6f8f6] text-gray-800 scroll-smooth overflow-hidden selection:bg-emerald-200">
-      {/* MUSIC */}
-      <audio autoPlay loop>
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-          type="audio/mpeg"
-        />
-      </audio>
+    .hero-bg {
+      background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+      url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+    }
 
-      {/* NAVBAR */}
-      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-emerald-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <h1 className="font-bold text-emerald-700 text-xl">
-            Khitanan Azzam
-          </h1>
+    .glass {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
 
-          <div className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
-            <a href="#profil" className="hover:text-emerald-600 transition">Profil</a>
-            <a href="#detail" className="hover:text-emerald-600 transition">Acara</a>
-            <a href="#gallery" className="hover:text-emerald-600 transition">Gallery</a>
-            <a href="#maps" className="hover:text-emerald-600 transition">Lokasi</a>
-          </div>
-        </div>
-      </nav>
-      {/* OPENING INVITATION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-emerald-950 to-emerald-900 text-white">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20" />
+<body class="bg-[#f6f8f6] text-gray-800">
 
-        <div className="absolute inset-0 bg-black/40" />
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+  </audio>
 
-        <div className="relative z-10 text-center max-w-4xl px-6">
-          <p className="tracking-[0.5em] uppercase text-emerald-200 text-sm mb-6">
-            Digital Invitation
-          </p>
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center justify-center text-white text-center px-6">
+    <div class="max-w-4xl">
+      <p class="uppercase tracking-[0.4em] text-emerald-200 mb-6">
+        Digital Invitation
+      </p>
 
-          <h1 className="text-6xl md:text-8xl font-black leading-tight mb-8">
-            Tasyakuran
-            <br />
-            Khitanan
-          </h1>
+      <h1 class="text-6xl md:text-8xl font-black leading-tight mb-8">
+        Tasyakuran<br>Khitanan
+      </h1>
 
-          <div className="w-32 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8" />
+      <div class="w-32 h-[2px] bg-white mx-auto mb-8"></div>
 
-          <p className="text-xl md:text-2xl text-emerald-50/90 leading-relaxed mb-10">
-            Kami mengundang Bapak/Ibu/Saudara/i
-            <br />
-            untuk menghadiri acara khitanan putra kami
-          </p>
+      <p class="text-xl md:text-2xl text-emerald-50 mb-10 leading-relaxed">
+        Kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara khitanan putra kami
+      </p>
 
-          <div className="inline-block bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[40px] px-10 py-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-            <p className="text-emerald-100 text-sm tracking-[0.3em] uppercase mb-3">
-              Putra Kami
-            </p>
+      <div class="glass rounded-[40px] border border-white/20 px-10 py-8 shadow-2xl inline-block">
+        <p class="uppercase tracking-[0.3em] text-sm text-emerald-100 mb-3">
+          Putra Kami
+        </p>
 
-            <h2 className="text-5xl md:text-6xl font-black text-white mb-3">
-              Muhammad Azzam
-            </h2>
+        <h2 class="text-5xl md:text-6xl font-black mb-3">
+          Muhammad Azzam
+        </h2>
 
-            <p className="text-emerald-100 text-lg">
-              Putra dari Bapak Ahmad & Ibu Siti
-            </p>
-          </div>
+        <p class="text-emerald-100 text-lg">
+          Putra dari Bapak Ahmad & Ibu Siti
+        </p>
+      </div>
 
-          <div className="mt-12 animate-bounce">
-            <a
-              href="#profil"
-              className="inline-flex items-center gap-3 bg-white text-emerald-900 px-8 py-4 rounded-full font-bold shadow-2xl hover:scale-105 transition duration-300"
-            >
-              Buka Undangan
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden py-32 px-6 text-center bg-gradient-to-br from-emerald-950 via-emerald-800 to-emerald-700 text-white">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
-        <div className="absolute top-10 left-10 w-72 h-72 bg-yellow-300/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,theme(colors.emerald.400),transparent_60%)]" />
-
-        <div className="relative max-w-4xl mx-auto">
-          <p className="tracking-[0.4em] uppercase text-emerald-100 text-sm mb-6">
-            Acara Khitanan
-          </p>
-
-          <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight drop-shadow-2xl">
-            Muhammad <span className="text-emerald-600">Azzam</span>
-          </h1>
-
-          <p className="text-lg md:text-2xl text-emerald-50/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Dengan penuh rasa syukur, kami mengundang Bapak/Ibu/Saudara/i
-            untuk menghadiri acara khitanan putra kami.
-          </p>
-
-          <div className="inline-flex items-center gap-4 bg-white/10 backdrop-blur-xl shadow-2xl rounded-3xl px-8 py-5 border border-white/20">
-            <div>
-              <p className="text-sm text-emerald-100">Hari & Tanggal</p>
-              <p className="font-bold text-2xl text-white">
-                Minggu, 25 Mei 2026
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COUNTDOWN */}
-      <section className="max-w-5xl mx-auto px-6 -mt-8 relative z-20">
-        <div className="bg-white/90 backdrop-blur-xl rounded-[40px] shadow-[0_20px_80px_rgba(0,0,0,0.15)] border border-white p-10">
-          <h2 className="text-center text-3xl font-bold text-emerald-700 mb-8">
-            Countdown Menuju Acara
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {[
-              { label: "Hari", value: timeLeft.days },
-              { label: "Jam", value: timeLeft.hours },
-              { label: "Menit", value: timeLeft.minutes },
-              { label: "Detik", value: timeLeft.seconds },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-gradient-to-br from-emerald-50 to-white rounded-[30px] py-10 border border-emerald-100 shadow-lg hover:scale-105 transition duration-300"
-              >
-                <div className="text-4xl font-bold text-emerald-700 mb-2">
-                  {item.value}
-                </div>
-                <div className="text-gray-500">{item.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROFILE SECTION */}
-      <section id="profil" className="max-w-5xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="bg-white rounded-3xl shadow-xl p-8 border border-emerald-100">
-            <img
-              src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=1200&auto=format&fit=crop"
-              alt="Anak"
-              className="rounded-2xl w-full h-[420px] object-cover"
-            />
-          </div>
-
-          <div>
-            <h2 className="text-4xl font-bold mb-6 text-emerald-700">
-              Assalamu'alaikum Wr. Wb.
-            </h2>
-
-            <p className="text-lg leading-relaxed text-gray-700 mb-6">
-              Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud
-              menyelenggarakan acara khitanan putra kami:
-            </p>
-
-            <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 mb-6">
-              <h3 className="text-3xl font-bold text-emerald-700 mb-2">
-                Muhammad Azzam
-              </h3>
-              <p className="text-gray-600">
-                Putra dari Bapak Ahmad & Ibu Siti
-              </p>
-            </div>
-
-            <p className="italic text-gray-600 leading-relaxed">
-              “Semoga menjadi anak yang sholeh, berbakti kepada orang tua,
-              dan menjadi kebanggaan keluarga.”
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* EVENT DETAIL */}
-      <section
-        id="detail"
-        className="py-24 px-6 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 text-white relative overflow-hidden"
-      >
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,white,transparent_60%)]" />
-
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold mb-12">
-            Detail Acara
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/10 backdrop-blur-2xl rounded-[32px] p-10 border border-white/20 shadow-2xl hover:-translate-y-2 transition duration-300">
-              <h3 className="text-2xl font-semibold mb-3">Tanggal</h3>
-              <p className="text-lg">Minggu</p>
-              <p className="text-xl font-bold">25 Mei 2026</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-2xl rounded-[32px] p-10 border border-white/20 shadow-2xl hover:-translate-y-2 transition duration-300">
-              <h3 className="text-2xl font-semibold mb-3">Waktu</h3>
-              <p className="text-lg">09.00 WIB</p>
-              <p className="text-xl font-bold">Selesai</p>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-2xl rounded-[32px] p-10 border border-white/20 shadow-2xl hover:-translate-y-2 transition duration-300">
-              <h3 className="text-2xl font-semibold mb-3">Lokasi</h3>
-              <p className="text-lg leading-relaxed">
-                Jl. Contoh Bahagia No. 123
-                <br />
-                Bogor, Jawa Barat
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MAP SECTION */}
-      <section id="maps" className="max-w-6xl mx-auto px-6 py-20">
-        <div className="bg-white rounded-[40px] shadow-[0_20px_80px_rgba(0,0,0,0.12)] overflow-hidden border border-gray-100">
-          <div className="p-8 text-center">
-            <h2 className="text-4xl font-bold mb-4 text-emerald-700">
-              Lokasi Acara
-            </h2>
-            <p className="text-gray-600 mb-8">
-              Klik tombol di bawah untuk membuka Google Maps.
-            </p>
-
-            <a
-              href="https://maps.google.com"
-              target="_blank"
-              className="inline-block bg-emerald-600 hover:bg-emerald-700 transition text-white font-semibold px-8 py-4 rounded-2xl shadow-lg"
-            >
-              Buka Google Maps
-            </a>
-          </div>
-
-          <iframe
-            title="maps"
-            src="https://maps.google.com/maps?q=bogor&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            className="w-full h-[400px] border-0"
-          />
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section id="gallery" className="py-24 px-6 bg-gradient-to-b from-white to-emerald-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-emerald-700 mb-4">
-              Gallery
-            </h2>
-            <p className="text-gray-600">
-              Momen bahagia bersama keluarga.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <img
-              src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop"
-              className="rounded-[32px] h-80 object-cover w-full shadow-2xl hover:scale-[1.03] transition duration-500"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop"
-              className="rounded-[32px] h-80 object-cover w-full shadow-2xl hover:scale-[1.03] transition duration-500"
-            />
-
-            <img
-              src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop"
-              className="rounded-[32px] h-80 object-cover w-full shadow-2xl hover:scale-[1.03] transition duration-500"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* WISHES */}
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="bg-white rounded-[40px] shadow-2xl border border-emerald-100 p-10">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold text-emerald-700 mb-4">
-              Ucapan & Doa
-            </h2>
-            <p className="text-gray-600">
-              Tinggalkan doa terbaik untuk putra kami.
-            </p>
-          </div>
-
-          <div className="grid gap-6">
-            <textarea
-              placeholder="Tulis ucapan dan doa di sini..."
-              className="w-full h-40 rounded-3xl border border-emerald-200 p-6 outline-none focus:ring-2 focus:ring-emerald-500"
-            />
-
-            <button className="bg-emerald-600 hover:bg-emerald-700 transition text-white font-semibold py-4 rounded-2xl shadow-lg">
-              Kirim Ucapan
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* RSVP */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto bg-gradient-to-br from-emerald-700 via-emerald-800 to-black rounded-[48px] p-14 text-white shadow-[0_20px_100px_rgba(0,0,0,0.25)] text-center border border-white/10">
-          <h2 className="text-4xl font-bold mb-4">
-            Kehadiran Anda Sangat Berarti
-          </h2>
-
-          <p className="text-lg text-emerald-50 mb-8 leading-relaxed">
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila
-            Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
-          </p>
-
-          <a
-            href="https://wa.me/6281234567890"
-            target="_blank"
-            className="inline-block bg-white text-emerald-700 font-bold px-8 py-4 rounded-2xl shadow-xl hover:scale-105 transition"
-          >
-            Konfirmasi Kehadiran
-          </a>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-20 text-center text-gray-500 text-sm bg-white border-t border-emerald-100 mt-10 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle_at_center,theme(colors.emerald.500),transparent_60%)]" />
-        <div className="relative z-10">
-          <p className="text-lg font-semibold text-emerald-700 mb-3">
-            Terima Kasih Atas Kehadiran & Doanya
-          </p>
-
-          <p>
-            © 2026 Digital Invitation — Muhammad Azzam
-          </p>
-        </div>
-      </footer>
+      <div class="mt-12 animate-bounce">
+        <a href="#detail"
+          class="bg-white text-emerald-800 font-bold px-8 py-4 rounded-full inline-block shadow-2xl hover:scale-105 transition">
+          Buka Undangan
+        </a>
+      </div>
     </div>
-  )
-}
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="max-w-5xl mx-auto px-6 py-20" id="detail">
+    <div class="bg-white rounded-[40px] p-10 shadow-2xl border border-emerald-100">
+      <h2 class="text-4xl font-bold text-center text-emerald-700 mb-10">
+        Countdown Menuju Acara
+      </h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="bg-emerald-50 rounded-3xl py-10 shadow-lg">
+          <div id="days" class="text-4xl font-bold text-emerald-700">0</div>
+          <div class="text-gray-500 mt-2">Hari</div>
+        </div>
+
+        <div class="bg-emerald-50 rounded-3xl py-10 shadow-lg">
+          <div id="hours" class="text-4xl font-bold text-emerald-700">0</div>
+          <div class="text-gray-500 mt-2">Jam</div>
+        </div>
+
+        <div class="bg-emerald-50 rounded-3xl py-10 shadow-lg">
+          <div id="minutes" class="text-4xl font-bold text-emerald-700">0</div>
+          <div class="text-gray-500 mt-2">Menit</div>
+        </div>
+
+        <div class="bg-emerald-50 rounded-3xl py-10 shadow-lg">
+          <div id="seconds" class="text-4xl font-bold text-emerald-700">0</div>
+          <div class="text-gray-500 mt-2">Detik</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL ACARA -->
+  <section class="bg-gradient-to-r from-emerald-900 to-emerald-700 text-white py-24 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-5xl font-bold mb-16">Detail Acara</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass rounded-[32px] p-10 border border-white/20 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-4">Tanggal</h3>
+          <p class="text-lg">Minggu</p>
+          <p class="text-2xl font-bold">25 Mei 2026</p>
+        </div>
+
+        <div class="glass rounded-[32px] p-10 border border-white/20 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-4">Waktu</h3>
+          <p class="text-lg">09.00 WIB</p>
+          <p class="text-2xl font-bold">Selesai</p>
+        </div>
+
+        <div class="glass rounded-[32px] p-10 border border-white/20 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-4">Lokasi</h3>
+          <p class="leading-relaxed">
+            Jl. Contoh Bahagia No.123<br>
+            Bogor, Jawa Barat
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-5xl font-bold text-emerald-700 mb-6">Gallery</h2>
+      <p class="text-gray-600 mb-14">Momen Bahagia Bersama Keluarga</p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop"
+          class="rounded-[32px] h-80 w-full object-cover shadow-2xl hover:scale-105 transition duration-500">
+
+        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=1200&auto=format&fit=crop"
+          class="rounded-[32px] h-80 w-full object-cover shadow-2xl hover:scale-105 transition duration-500">
+
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop"
+          class="rounded-[32px] h-80 w-full object-cover shadow-2xl hover:scale-105 transition duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="py-24 px-6">
+    <div class="max-w-4xl mx-auto bg-gradient-to-br from-emerald-700 to-black rounded-[48px] p-14 text-center text-white shadow-2xl">
+      <h2 class="text-5xl font-bold mb-6">
+        Kehadiran Anda Sangat Berarti
+      </h2>
+
+      <p class="text-lg text-emerald-50 leading-relaxed mb-10">
+        Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+      </p>
+
+      <a href="https://wa.me/6281234567890"
+        target="_blank"
+        class="bg-white text-emerald-800 font-bold px-10 py-5 rounded-full inline-block shadow-2xl hover:scale-105 transition">
+        Konfirmasi Kehadiran
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 text-center text-gray-500 bg-white border-t border-emerald-100">
+    <p class="text-lg font-semibold text-emerald-700 mb-2">
+      Terima Kasih Atas Kehadiran & Doanya
+    </p>
+
+    <p>
+      © 2026 Digital Invitation — Muhammad Azzam
+    </p>
+  </footer>
+
+  <script>
+    const targetDate = new Date('2026-05-25T09:00:00').getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerHTML = days;
+      document.getElementById('hours').innerHTML = hours;
+      document.getElementById('minutes').innerHTML = minutes;
+      document.getElementById('seconds').innerHTML = seconds;
+    }, 1000);
+  </script>
+
+</body>
+</html>
